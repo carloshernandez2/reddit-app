@@ -1,0 +1,66 @@
+.App {
+  display: grid;
+  min-height: 800px;
+  width: 90vmax;
+  margin: 0 auto;
+  gap: 3vmin;
+  grid-template: 150px 150px 150px 300px 100px 1fr 100px / repeat(8, 1fr);
+  grid-template-areas: "logo nav nav nav nav nav nav sign"
+                       "header header header header header header header header"
+                       "search search search search search search search search"
+                       "subred subred subred subred subred subred subred subred"
+                       "subhead subhead subhead subhead subhead subhead subhead subhead"
+                       "reddit reddit reddit reddit reddit reddit reddit reddit"
+                       "footer footer footer footer footer footer footer footer";
+
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.subred2 {
+  display: grid;
+  flex-direction: column;
+  grid-area: subred;
+  grid-template-areas: "div1"
+                       "div2";
+}
+.subred2 div {
+  grid-area: div2;
+}
+
+.highlight {
+  background-color: aquamarine;
+  grid-area: div1;
+}
+
+@media only screen and (max-width: 900px) {
+  .App {
+    grid-template: 150px 150px 150px 150px 300px 300px 100px 1fr 100px / repeat(8, 1fr);
+    grid-template-areas:"logo nav nav nav nav nav nav sign"
+                        "header header header header header header header header"
+                        "search search search search search search search search" 
+                        "search search search search search search search search"
+                        "subred subred subred subred subred subred subred subred" 
+                        "subred subred subred subred subred subred subred subred"
+                        "subhead subhead subhead subhead subhead subhead subhead subhead"
+                        "reddit reddit reddit reddit reddit reddit reddit reddit"
+                        "footer footer footer footer footer footer footer footer";
+  }
+ }
+
+@media only screen and (orientation: portrait) {
+  .App {
+    gap: 0;
+    width: 100%;
+  }
+ }

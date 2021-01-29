@@ -1,0 +1,31 @@
+.subred {
+    grid-area: subred;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tendencies {
+    overflow: hidden;
+    padding: 0 2%;
+    flex: 1 1 20%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    min-width: 200px;
+}
+
+.tendencies img {
+    width: 250px;
+    height: auto;
+    overflow: hidden;
+
+}
+
+@media only screen and (max-width: 900px) {
+    .tendencies {
+        height: 300px;
+    }
+}

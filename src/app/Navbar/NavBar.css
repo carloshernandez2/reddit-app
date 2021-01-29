@@ -1,0 +1,54 @@
+.logo {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+
+}
+
+.link img {
+    height: 90px;
+    width: auto;
+    border-radius: 100%;
+}
+
+.link {
+    list-style: none;
+    text-decoration: none;
+}
+
+.nav {
+    grid-area: nav;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.sign {
+    grid-area: sign;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+button {
+    padding: 10px;
+    background-color: white;
+    border-radius: 20%;
+}
+
+.accentuated {
+    border: 1px solid black;
+}
+
+@media only screen and (orientation: portrait) {
+    .link {
+      margin: 0 2px;
+    }
+   }
