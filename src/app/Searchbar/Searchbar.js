@@ -1,14 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { useDispatch } from 'react-redux'
+
+import { queryUpdated } from "../../features/reddit/RedditSlice";
 
 import './Searchbar.css';
 
 export function Searchbar() {
+  const dispatch = useDispatch();
+  const [localQuery, setLocalQuery] = useState('');
+
+  const handleClick = () => {
+    dispatch(queryUpdated(localQuery))
+  }
+
+  const handleChange = ({target}) => {
+    setLocalQuery(target.value);
+  }
+
   return (
     <div className="search">
           <div className="bar">
             <div className="inputGroup">
-              <label htmlFor="input1">Location</label>
-              <textarea placeholder="Type here" id="input1" className="input"/>
+              <label htmlFor="input1">Relevant posts</label>
+              <textarea placeholder="Type here" id="input1" className="input" onChange={handleChange} value={localQuery}/>
             </div>
             <div className="inputGroup">
               <label htmlFor="input1">Checkin</label>
@@ -22,7 +36,7 @@ export function Searchbar() {
               <label htmlFor="input1">Guests</label>
               <textarea placeholder="Type here" id="input1" className="input"/>
             </div>
-            <button className="searchButton">Search</button>
+            <button className="searchButton" onClick={handleClick}>Search</button>
           </div>
         </div>
   )

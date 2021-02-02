@@ -5,6 +5,7 @@ import './NavBar.css';
 import logo from '../../Static/images/Reddit-social-media-icon.png'
 
 export function Navbar() {
+
   return (
     <React.Fragment>
     <figure className="logo">
@@ -12,10 +13,10 @@ export function Navbar() {
     </figure>
     <nav className="nav">
       <ul className="list">
-        <Link to="/" className="link">FAQ</Link>
+        <Link to="/" className="link">Reddits</Link>
         <Link to="/" className="link">How</Link>
         <Link to="/" className="link">Blog</Link>
-        <Link to="/" className="link">Reddits</Link>
+        <Link to="/" className="link">How</Link>
         <Link to="/" className="link">SubReddits</Link>
       </ul>
     </nav>

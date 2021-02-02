@@ -1,0 +1,7 @@
+.reddit {
+    grid-area: reddit;
+}
+
+.hotPosts {
+    background-color: gray;
+}

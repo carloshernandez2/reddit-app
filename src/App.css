@@ -1,3 +1,6 @@
+@import url('./fontsNreset.css');
+@import url('./Static/animation/animation.css');
+
 .App {
   display: grid;
   min-height: 800px;
@@ -25,6 +28,8 @@
 
 .footer {
   grid-area: footer;
+  display: flex;
+  align-items: center;
 }
 
 .subred2 {
@@ -41,6 +46,12 @@
 .highlight {
   background-color: aquamarine;
   grid-area: div1;
+}
+
+.loading {
+	-webkit-animation: rotate-scale-up 0.65s linear 0.65s infinite both;
+          animation: rotate-scale-up 0.65s linear 0.65s infinite both;
+  margin: 40px 0;
 }
 
 @media only screen and (max-width: 900px) {
