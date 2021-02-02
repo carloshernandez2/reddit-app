@@ -1,68 +1,77 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# Project Name
 
-## Available Scripts
+> reddit-app.
 
-In the project directory, you can run:
+## Table of contents
 
-### `npm start`
+- [Project Name](#project-name)
+  - [Table of contents](#table-of-contents)
+  - [General info](#general-info)
+  - [Screenshots](#screenshots)
+  - [Technologies](#technologies)
+  - [Setup](#setup)
+  - [Code Examples](#code-examples)
+  - [Features](#features)
+  - [Status](#status)
+  - [Inspiration](#inspiration)
+  - [Contact](#contact)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## General info
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The purpose of the proyect was to make a web app with react-redux technologies.
 
-### `npm test`
+## Screenshots
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Background image screenshot:
 
-### `npm run build`
+![Performance](./src/Static/images/Performance.jpeg)
+![App-view](./src/Static/images/App-view.jpeg)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- React.js
+- Redux
+- Related technologies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Setup
 
-### `npm run eject`
+[Home page deployed with Netlify](https://keen-fermat-0de341.netlify.app/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Code Examples
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Example of usage:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```javascript
+import { configureStore } from '@reduxjs/toolkit';
+import RedditReducer from "../features/reddit/RedditSlice";
+import SubRedditReducer from "../features/subReddit/SubRedditSlice";
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+export default configureStore({
+  reducer: {
+    reddit: RedditReducer,
+    subreddit: SubRedditReducer
+  },
+});
+```
 
-## Learn More
+## Features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+List of features:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- AJAX requests to the reddit API.
+- Search for relevant posts that give extra info related to the subredit.
+- responsive design
 
-### Code Splitting
+## Status
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Project is: In progress.
 
-### Analyzing the Bundle Size
+there are still some features left to implement, including design for cellphones.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Inspiration
 
-### Making a Progressive Web App
+I was motivated by the big step it means to write my first react app.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Contact
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Created by [@CarlosHernández](https://linkedin.com/in/carlos-manuel-hernández-consuegra-42975a189) - feel free to contact me!
