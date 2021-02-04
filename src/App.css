@@ -7,7 +7,7 @@
   width: 90vmax;
   margin: 0 auto;
   gap: 3vmin;
-  grid-template: 150px 150px 150px 300px 100px 1fr 100px / repeat(8, 1fr);
+  grid-template: 150px 150px auto auto 100px 1fr 100px / repeat(8, 1fr);
   grid-template-areas: "logo nav nav nav nav nav nav sign"
                        "header header header header header header header header"
                        "search search search search search search search search"
@@ -62,7 +62,7 @@
 
 @media only screen and (max-width: 900px) and (min-width: 500px) {
   .App {
-    grid-template: 150px 150px 150px 150px 300px 300px 100px 1fr 100px / repeat(8, 1fr);
+    grid-template: 150px 200px auto auto auto 100px 4fr 100px / repeat(8, 1fr);
     grid-template-areas:"logo nav nav nav nav nav nav sign"
                         "header header header header header header header header"
                         "search search search search search search search search" 
@@ -84,7 +84,7 @@
 
 @media only screen and (max-width: 500px) {
   .App {
-    grid-template: 150px 150px 600px 1000px 100px 1fr 100px / 1fr 6fr 3fr;
+    grid-template: 150px 150px auto auto 100px 1fr 100px / 1fr 6fr 3fr;
     grid-template-areas:"logo nav sign"
                         "header header header"
                         "search search search" 
