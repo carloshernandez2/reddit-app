@@ -28,6 +28,8 @@
     align-items: center;
     justify-content: space-evenly;
     height: 100%;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 .sign {

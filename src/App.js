@@ -15,7 +15,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Navbar/>
-        <header className="header">
+        <header className="header headtype">
           <h1>Reddit app</h1>
           <h2>Your best choice</h2>
         </header>
@@ -26,6 +26,9 @@ function App() {
           <div></div>
           <div className="highlight"></div>
         </div>
+        <header className="subhead headtype">
+          <h2>Info zone</h2>
+        </header>
         <SubReddit />
         <Switch>
           <Route exact path="/" component={Reddit}/>
