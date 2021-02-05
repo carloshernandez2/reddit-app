@@ -62,7 +62,7 @@ export function SubReddit() {
   }
 
   return (
-  <aside className="container">
+  <aside className="container r-subred">
     {Array.isArray(content)? content.slice(0, 4) : content}
   </aside>
   )

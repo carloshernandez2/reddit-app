@@ -26,7 +26,7 @@ export const RedditPost = () => {
               <p>{`This Subreddit is ${obj.subreddit_type}!!!`}</p>
               <a href={`https://www.reddit.com/${obj.subreddit_name_prefixed}`} target="_blank" rel="noreferrer">{`Click to go to Subreddit ${obj.subreddit}`}</a>
             </aside>
-            <Link to={`/reddits/${obj.id}`} className="button muted-button">
+            <Link to={`/reddit/posts/${obj.id}`} className="button muted-button">
                 <button>View Post</button>
             </Link>
           </div>

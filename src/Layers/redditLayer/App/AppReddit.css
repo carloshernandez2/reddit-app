@@ -1,0 +1,81 @@
+.AppReddit {
+  grid-area: main;
+  display: grid;
+  min-height: 800px;
+  width: 90vmax;
+  margin: 0 auto;
+  gap: 3vmin;
+  grid-template: 150px auto auto 100px 1fr / repeat(8, 1fr);
+  grid-template-areas:  "r-header r-header r-header r-header r-header r-header r-header r-header"
+                        "r-search r-search r-search r-search r-search r-search r-search r-search"
+                        "r-subred r-subred r-subred r-subred r-subred r-subred r-subred r-subred"
+                        "r-subhead r-subhead r-subhead r-subhead r-subhead r-subhead r-subhead r-subhead"
+                        "r-reddit r-reddit r-reddit r-reddit r-reddit r-reddit r-reddit r-reddit";
+}
+
+.headtype {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column
+}
+
+.r-header {
+  grid-area: r-header;
+}
+.r-subhead {
+  grid-area: r-subhead;
+}
+
+.subred2 {
+  display: grid;
+  flex-direction: column;
+  grid-area: r-subred;
+  grid-template-areas: "div1"
+                       "div2";
+}
+.subred2 div {
+  grid-area: div2;
+}
+
+.highlight {
+  background-color: aquamarine;
+  grid-area: div1;
+}
+
+.loading {
+	-webkit-animation: rotate-scale-up 0.65s linear 0.65s infinite both;
+          animation: rotate-scale-up 0.65s linear 0.65s infinite both;
+  margin: 40px 0;
+}
+
+@media only screen and (max-width: 900px) and (min-width: 500px) {
+  .AppReddit {
+    grid-template: 200px auto auto auto 100px 1fr / repeat(8, 1fr);
+    grid-template-areas:"r-header r-header r-header r-header r-header r-header r-header r-header"
+                        "r-search r-search r-search r-search r-search r-search r-search r-search"
+                        "r-search r-search r-search r-search r-search r-search r-search r-search"
+                        "r-subred r-subred r-subred r-subred r-subred r-subred r-subred r-subred"
+                        "r-subred r-subred r-subred r-subred r-subred r-subred r-subred r-subred"
+                        "r-subhead r-subhead r-subhead r-subhead r-subhead r-subhead r-subhead r-subhead"
+                        "r-reddit r-reddit r-reddit r-reddit r-reddit r-reddit r-reddit r-reddit";
+  }
+ }
+
+@media only screen and (orientation: portrait) {
+  .AppReddit {
+    gap: 0;
+    width: 100%;
+  }
+ }
+
+@media only screen and (max-width: 500px) {
+  .AppReddit {
+    grid-template: 150px auto auto 100px 1fr / 1fr 6fr 3fr;
+    grid-template-areas:"r-header r-header r-header"
+                        "r-search r-search r-search"
+                        "r-subred r-subred r-subred"
+                        "r-subhead r-subhead r-subhead"
+                        "r-reddit r-reddit r-reddit";
+  }
+ }

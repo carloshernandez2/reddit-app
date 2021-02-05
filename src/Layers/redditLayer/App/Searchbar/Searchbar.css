@@ -1,5 +1,5 @@
-.search {
-    grid-area: search;
+.r-search {
+    grid-area: r-search;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,10 +1,13 @@
 .container {
-    grid-area: subred;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     padding: 50px 0;
+}
+
+.r-subred {
+    grid-area: r-subred;
 }
 
 .tendencies {

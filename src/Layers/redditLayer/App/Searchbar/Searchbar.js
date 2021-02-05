@@ -18,7 +18,7 @@ export function Searchbar() {
   }
 
   return (
-    <div className="search">
+        <React.Fragment>
           <div className="bar">
             <div className="inputGroup">
               <label htmlFor="input1">Relevant posts</label>
@@ -38,6 +38,6 @@ export function Searchbar() {
             </div>
             <button className="searchButton" onClick={handleClick}>Search</button>
           </div>
-        </div>
+        </React.Fragment>
   )
 }

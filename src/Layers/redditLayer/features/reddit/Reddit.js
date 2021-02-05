@@ -37,7 +37,7 @@ export function Reddit() {
   }
 
   return (
-    <main className="reddit container">
+    <main className="r-reddit container">
         {content}
     </main>
   )

@@ -13,7 +13,7 @@ export function Navbar() {
     </figure>
     <nav className="nav">
       <ul className="list">
-        <Link to="/" className="link">Reddits</Link>
+        <Link to="/reddit" className="link">Reddits</Link>
         <Link to="/" className="link">How</Link>
         <Link to="/" className="link">Blog</Link>
         <Link to="/" className="link">People</Link>

@@ -9,7 +9,7 @@ export const SingleReddit = ({ match }) => {
 
   if (!reddit) {
     return (
-        <main className="reddit">
+        <main className="r-reddit">
             <section className="tendencies hotPosts">
                 <h2>Sorry we could not find your post</h2>
             </section>
@@ -18,7 +18,7 @@ export const SingleReddit = ({ match }) => {
   }
 
   return (
-    <main className="reddit">
+    <main className="r-reddit">
         <div key={reddit.id} className="tendencies hotPosts">
             <header>
                 <h2>{reddit.title}</h2>
@@ -33,7 +33,7 @@ export const SingleReddit = ({ match }) => {
             <aside>
                 <p>{`This publication has ${reddit.ups} ups`}</p>
                 <p>{`This Subreddit is ${reddit.subreddit_type}!!!`}</p>
-                <a href={`https://www.redditstatic.com/${reddit.subreddit_name_prefixed}`} target="_blank" rel="noreferrer">{`Click to go to Subreddit ${reddit.subreddit}`}</a>
+                <a href={`https://www.reddit.com/${reddit.subreddit_name_prefixed}`} target="_blank" rel="noreferrer">{`Click to go to Subreddit ${reddit.subreddit}`}</a>
             </aside>
         </div>
       </main>
