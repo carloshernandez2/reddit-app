@@ -14,7 +14,7 @@ export function Navbar() {
     <nav className="nav">
       <ul className="list">
         <Link to="/reddit" className="link">Reddits</Link>
-        <Link to="/" className="link">How</Link>
+        <Link to="/trump" className="link">Trump</Link>
         <Link to="/" className="link">Blog</Link>
         <Link to="/" className="link">People</Link>
         <Link to="/" className="link">SubReddits</Link>

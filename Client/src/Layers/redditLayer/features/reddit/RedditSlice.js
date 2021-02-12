@@ -12,11 +12,12 @@ const initialState = {
 
 export const fetchReddits = createAsyncThunk('reddit/fetchReddits', async (param, {getState}) => {
   let {queryString} = getState().reddit;
+  if (!queryString.string) return [];
   let url = `https://www.reddit.com/search.json?q=${queryString.string}&limit=10&sort=relevance&type=link`;
   const response = await fetch(url);
   const jsonResponse = await response.json();
   const data = jsonResponse.data.children
-  if(!data.length) return [];
+  if(!data.length) throw new Error('no posts available');
   const finalArray = data.map(obj => ({
       id: obj.data.name,
       subreddit: obj.data.subreddit,

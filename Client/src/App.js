@@ -5,6 +5,7 @@ import './App.css';
 
 import { Navbar } from "./app-main/Navbar/Navbar";
 import AppReddit from "./Layers/redditLayer/App/AppReddit";
+import TrumpApp from "./Layers/trumpLayer/App/TrumpApp";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Navbar/>
         <Switch>
             <Route path="/reddit" component={AppReddit} />
+            <Route path="/trump" component={TrumpApp} />
             <Redirect to="/reddit"/>
         </Switch>
         <footer className="footer">
