@@ -12,7 +12,7 @@ var app = express();
 
 // view engine setup
 // app.use(express.static(path.join(__dirname, 'Client/build')))
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'production') {
   // only use in development
   app.use(express.static(path.join(__dirname, 'Client/build')))
 }
