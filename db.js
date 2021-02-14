@@ -1,12 +1,5 @@
-const { Pool } = require('pg')
-
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'postgres',
-  password: 'restableceR1961',
-  post: 5432
-})
+const { pool } = require('./config')
+require('dotenv').config()
 
 const getInsults = (request, response) => {
   const {q} = request.query || '';

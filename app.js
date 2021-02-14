@@ -11,12 +11,16 @@ var errorhandler = require('errorhandler');
 var app = express();
 
 // view engine setup
+app.use(express.static(path.join(__dirname, 'Client/build')))
+if (process.env.NODE_ENV === 'development') {
+  // only use in development
+  app.use(express.static(path.join(__dirname, 'Client/build')))
+}
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors())
 
 app.use('/api/trump', trumpRouter);
@@ -25,5 +29,9 @@ if (process.env.NODE_ENV === 'development') {
   // only use in development
   app.use(errorhandler())
 }
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Client/build/index.html'))
+})
 
 module.exports = app;
