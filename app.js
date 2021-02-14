@@ -11,7 +11,7 @@ var errorhandler = require('errorhandler');
 var app = express();
 
 // view engine setup
-app.use(express.static(path.join(__dirname, 'Client/build')))
+// app.use(express.static(path.join(__dirname, 'Client/build')))
 if (process.env.NODE_ENV === 'development') {
   // only use in development
   app.use(express.static(path.join(__dirname, 'Client/build')))

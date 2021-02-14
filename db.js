@@ -1,5 +1,4 @@
 const { pool } = require('./config')
-require('dotenv').config()
 
 const getInsults = (request, response) => {
   const {q} = request.query || '';
