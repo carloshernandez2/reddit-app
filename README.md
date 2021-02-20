@@ -31,7 +31,6 @@ Background image screenshot:
 
 - React.js
 - Redux
-- Related technologies
 
 ## Setup
 
