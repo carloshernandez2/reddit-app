@@ -21,7 +21,7 @@ export const TrumpPost = () => {
               <p>{`This target was ${obj.target}`}</p>
               <p>{`Date: ${obj.date}`}</p>
             </aside>
-            <Link to={`/reddit/posts/${obj.id}`} className="button muted-button">
+            <Link to={`/trump`} className="button muted-button">
                 <button>View Post</button>
             </Link>
           </div>

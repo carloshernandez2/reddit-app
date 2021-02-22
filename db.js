@@ -1,8 +1,8 @@
-const { pool } = require('./config')
+const { db } = require('./config')
 
 const getInsults = (request, response) => {
   const {q} = request.query || '';
-  pool.query(`SELECT * FROM trump WHERE insult LIKE '${q}%' ORDER BY id LIMIT 10;`, (error, results) => {
+  db.query(`SELECT * FROM trump WHERE insult LIKE '${q}%' ORDER BY id LIMIT 20;`, (error, results) => {
     if (error) {
       throw error
     }

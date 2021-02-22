@@ -6,6 +6,7 @@ import './App.css';
 import { Navbar } from "./app-main/Navbar/Navbar";
 import AppReddit from "./Layers/redditLayer/App/AppReddit";
 import TrumpApp from "./Layers/trumpLayer/App/TrumpApp";
+import SessionApp from "./Layers/sessionLayer/App/SessionApp";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Switch>
             <Route path="/reddit" component={AppReddit} />
             <Route path="/trump" component={TrumpApp} />
+            <Route path="/session" component={SessionApp} />
             <Redirect to="/reddit"/>
         </Switch>
         <footer className="footer">

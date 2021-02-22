@@ -21,8 +21,8 @@ export function Navbar() {
       </ul>
     </nav>
     <div className="sign">
-      <button>signIn</button>
-      <button className="accentuated">SignUp</button>
+    <Link to="/session/sign-in" className="link"><button>signIn</button></Link>
+    <Link to="/session/sign-up" className="link"><button className="accentuated">SignUp</button></Link>
     </div>
     </React.Fragment>
   )
