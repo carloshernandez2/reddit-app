@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import { useSelector, useDispatch } from 'react-redux'
 
 import "./Session.css"
 
@@ -8,8 +7,6 @@ export const Session = () => {
   const [password, setPassword] = useState('')
   const [type, setType] = useState('')
   const [canSave, setCanSave] = useState(true)
-
-  const dispatch = useDispatch()
 
   const onUsernameChanged = e => setUsername(e.target.value)
   const onPasswordChanged = e => setPassword(e.target.value)
