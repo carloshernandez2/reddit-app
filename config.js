@@ -12,4 +12,11 @@ const db = new Pool({
   }
 })
 
-module.exports = {db}
+const dbGray = new Pool({
+  connectionString: isProduction ? process.env.HEROKU_POSTGRESQL_GRAY_URL : connectionString,
+  ssl: !isProduction? false : {
+    rejectUnauthorized: false
+  }
+})
+
+module.exports = {db, dbGray}

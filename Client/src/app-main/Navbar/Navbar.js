@@ -1,10 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 
 import './NavBar.css';
 import logo from '../../Static/images/Reddit-social-media-icon.png'
 
+import { sessionState, logout } from "../../Layers/sessionLayer/Features/SessionSlice";
+
 export function Navbar() {
+
+  const session = useSelector(sessionState)
+  const dispatch = useDispatch();
+
+  const handleLogin = () => {
+    dispatch(logout())
+  }
 
   return (
     <React.Fragment>
@@ -21,8 +31,16 @@ export function Navbar() {
       </ul>
     </nav>
     <div className="sign">
-    <Link to="/session/sign-in" className="link"><button>signIn</button></Link>
-    <Link to="/session/sign-up" className="link"><button className="accentuated">SignUp</button></Link>
+    {session.authorization === 'Unauthorized'?
+    <React.Fragment>
+      <Link to="/session/sign-in" className="link"><button>SignIn</button></Link>
+      <Link to="/session/sign-up" className="link"><button className="accentuated">SignUp</button></Link> 
+    </React.Fragment> :
+    <React.Fragment>
+      <p className="username">{session.authorization}</p>
+      <button onClick={handleLogin} className="accentuated">Logout</button>
+    </React.Fragment>
+    }
     </div>
     </React.Fragment>
   )

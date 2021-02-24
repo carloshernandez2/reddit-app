@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: process.env.NODE_ENV === 'production'? process.env.LOCALHOST : "http://localhost:3000", // <-- location of the react app were connecting to
+    origin: process.env.NODE_ENV === 'production'? process.env.LOCALHOST : ["http://localhost:3000", "http://localhost:5000"], // <-- location of the react app were connecting to
     credentials: true,
   })
 );

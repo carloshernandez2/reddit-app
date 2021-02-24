@@ -39,7 +39,7 @@
     justify-content: space-around;
 }
 
-button {
+button, input[type="submit"], .username {
     padding: 10px;
     background-color: white;
     border-radius: 20%;

@@ -19,7 +19,7 @@ export const RedditPost = () => {
               <img src={obj.thumbnail} alt="post"/>
             </figure> : 
             <article>
-              <br/><p>{obj.selftext || obj.selftext.substring(0, 100)}...</p><br/>
+              <br/><p>{obj.selftext && obj.selftext.substring(0, 100)}...</p><br/>
             </article>}
             <aside>
               <p>{`This publication has ${obj.ups} ups`}</p>

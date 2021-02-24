@@ -14,6 +14,7 @@ export const fetchInsults = createAsyncThunk('insults/fetchInsults', async (para
   if (!insultString) return [];
   let route = `/api/trump/insults?q=${insultString.string}`;
   const response = await fetch(route);
+  if (response.status === 401) throw new Error("Unauthorized");
   const jsonResponse = await response.json();
   if(!jsonResponse.length) throw new Error('no posts available');
   const finalArray = jsonResponse.map(obj => ({

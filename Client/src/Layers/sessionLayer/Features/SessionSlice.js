@@ -1,62 +1,96 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 const initialState = {
-  insultString: {
-    string: ''
+  welcome: {
+    string: 'signUp'
   },
-  body: [],
+  body: {
+    authorization : 'Unauthorized',
+    message: ""
+  },
   status: 'idle',
   error: null
 }
 
-export const fetchInsults = createAsyncThunk('insults/fetchInsults', async (param, {getState}) => {
-  let {insultString} = getState().trump;
-  if (!insultString) return [];
-  let route = `/api/trump/insults?q=${insultString.string}`;
-  const response = await fetch(route);
-  const jsonResponse = await response.json();
-  if(!jsonResponse.length) throw new Error('no posts available');
-  const finalArray = jsonResponse.map(obj => ({
-    id: obj.id,
-    date: obj.date,
-    target: obj.target,
-    insult: obj.insult,
-    tweet: obj.tweet
-  }))
-  return finalArray
+export const fetchSession = createAsyncThunk('session/fetchSession', async (param) => {
+  const {username, password, type} = param;
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ 
+                          username: username, 
+                          password: password,
+                          type: type
+                        })
+};
+
+  const response = await fetch("/api/session/login", requestOptions);
+  const data = await response.json();
+  return data;
 })
 
-const TrumpSlice = createSlice({
-  name: 'trump',
+export const fetchUser = createAsyncThunk('session/fetchUser', async () => {
+
+  const response = await fetch("/api/session/user");
+  const data = await response.json();
+  return data;
+
+})
+
+export const logout = createAsyncThunk('session/logout', async () => {
+
+  const response = await fetch("/api/session/logout");
+  const data = await response.json();
+  return data;
+
+})
+
+const SessionSlice = createSlice({
+  name: 'session',
   initialState,
   reducers: {
-    insultUpdated(state, action) {
-      state.insultString.string = action.payload
+    welcomeUpdated(state, action) {
+      state.welcome.string = action.payload
     }
   },
   extraReducers: {
-    [fetchInsults.pending]: (state, action) => {
-      state.status = 'loading'
+    [fetchSession.fulfilled]: (state, action) => {
+      state.status = 'succeeded'
+      state.body = action.payload
+      state.error = null;
     },
-    [fetchInsults.fulfilled]: (state, action) => {
+    [fetchSession.rejected]: (state, action) => {
+      state.status = 'failed'
+      state.body = action.error.message
+      state.error = action.error.message
+    },
+    [fetchUser.fulfilled]: (state, action) => {
       state.status = 'succeeded'
       state.body = action.payload
     },
-    [fetchInsults.rejected]: (state, action) => {
+    [fetchUser.rejected]: (state, action) => {
+      state.status = 'failed'
+      state.error = action.error.message
+    },
+    [logout.fulfilled]: (state, action) => {
+      state.status = 'succeeded'
+      state.body = action.payload
+    },
+    [logout.rejected]: (state, action) => {
       state.status = 'failed'
       state.error = action.error.message
     }
   }
 })
 
-export const trumpState = state => state.trump.body
+export const sessionState = state => state.session.body
 
-export const trumpQuery = state => state.trump.insultString;
+export const welcomeString = state => state.session.welcome.string;
 
-export const trumpStatus = state => state.trump.status;
+export const sessionStatus = state => state.session.status;
 
-export const trumpError = state => state.trump.error;
+export const sessionError = state => state.session.error;
 
-export const { insultUpdated } = TrumpSlice.actions
+export const { welcomeUpdated } = SessionSlice.actions
 
-export default TrumpSlice.reducer
+export default SessionSlice.reducer
