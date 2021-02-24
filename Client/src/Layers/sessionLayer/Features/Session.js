@@ -123,7 +123,7 @@ export const Session = () => {
         <button  type="submit" disabled={!canSave}>
           Submit
         </button>
-        <p>{session.message}</p>
+        {login && <p>{session.message}</p>}
       </form>
   )
 }
