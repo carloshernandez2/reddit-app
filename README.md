@@ -24,7 +24,7 @@ The purpose of the proyect was to make a PERN web app.
 
 Background image screenshot:
 
-![Performance](./images/screenshot-pern-app.jpeg)
+![Web browser](./Images/screenshot-pern-app.jpeg)
 
 ## Technologies
 
