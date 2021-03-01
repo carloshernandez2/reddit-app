@@ -36,7 +36,7 @@ Background image screenshot:
 
 ## Setup
 
-[Deployed with Heroku](https://keen-fermat-0de341.netlify.app/)
+[Deployed with Heroku](https://portfolio-app-carlos.herokuapp.com/)
 
 ## Code Examples
 
