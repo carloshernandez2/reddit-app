@@ -1,6 +1,6 @@
 # Project Name
 
-> reddit-app.
+> PERN-app.
 
 ## Table of contents
 
@@ -18,40 +18,48 @@
 
 ## General info
 
-The purpose of the proyect was to make a web app with react-redux technologies.
+The purpose of the proyect was to make a PERN web app.
 
 ## Screenshots
 
 Background image screenshot:
 
-![Performance](./src/Static/images/Performance.jpeg)
-![App-view](./src/Static/images/App-view.jpeg)
+![Performance](./images/screenshot-pern-app.jpeg)
 
 ## Technologies
 
-- React.js
+- React
 - Redux
-- Related technologies
+- PostgreSQL
+- Express.js
+- Passport.js
 
 ## Setup
 
-[Home page deployed with Netlify](https://keen-fermat-0de341.netlify.app/)
+[Deployed with Heroku](https://keen-fermat-0de341.netlify.app/)
 
 ## Code Examples
 
 Example of usage:
 
 ```javascript
-import { configureStore } from '@reduxjs/toolkit';
-import RedditReducer from "../features/reddit/RedditSlice";
-import SubRedditReducer from "../features/subReddit/SubRedditSlice";
-
-export default configureStore({
-  reducer: {
-    reddit: RedditReducer,
-    subreddit: SubRedditReducer
-  },
-});
+passport.use(new LocalStrategy((username, password, cb) => {
+  dbGray.query('SELECT id, username, password, type FROM users WHERE username=$1', [username], (err, result) => {
+   if (err) throw err;
+   if(result.rows.length > 0) {
+    const first = result.rows[0]
+    bcrypt.compare(password, first.password, function(err, res) {
+     if(res) {
+      cb(null, { id: first.id, username: first.username, type: first.type })
+     } else {
+      cb(null, false)
+     }
+    })
+   } else {
+    cb(null, false)
+   }
+  })
+ }))
 ```
 
 ## Features
@@ -61,16 +69,19 @@ List of features:
 - AJAX requests to the reddit API.
 - Search for relevant posts that give extra info related to the subredit.
 - responsive design
+- Information about Trump's Twitter account insults stored in the database.
+- Session
+- Authentication
 
 ## Status
 
 Project is: In progress.
 
-there are still some features left to implement, including design for cellphones.
+there are still some features left to implement, will be planned in the future.
 
 ## Inspiration
 
-I was motivated by the big step it means to write my first react app.
+I was motivated by the big step it means to write my PERN app.
 
 ## Contact
 
