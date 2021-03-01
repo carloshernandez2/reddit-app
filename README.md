@@ -36,7 +36,7 @@ Background image screenshot:
 
 ## Setup
 
-[Deployed with Heroku](https://portfolio-app-carlos.herokuapp.com/)
+[Watch app Deployed with Heroku](https://portfolio-app-carlos.herokuapp.com/)
 
 ## Code Examples
 
