@@ -6,12 +6,9 @@ module.exports = (app, passport) => {
 
   const sessionLogout = (req, res, next) => {
       if (req.user) {
-        req.session.destroy((err) => {
-          if(err) throw err;
           req.logout()
           next();
-      }) 
-    } else {
+     } else {
       next();
     }
   }

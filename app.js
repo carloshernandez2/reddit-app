@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const errorhandler = require('errorhandler');
 const passport = require("passport");
 const session = require("express-session");
+const cookieSession = require('cookie-session')
 
 const trumpRouter = require('./routes/index');
 
@@ -25,14 +26,10 @@ app.use(
     credentials: true,
   })
 );
-app.use(
-  session({
-    secret: "secretcode",
-    resave: true,
-    saveUninitialized: true,
-  })
-);
-app.use(cookieParser("secretcode"));
+app.use(cookieSession({
+  maxAge: 24*60*60*1000,
+  keys: [process.env.SECRET_KEY]
+}))
 app.use(passport.initialize());
 app.use(passport.session());
 require("./passport")(passport);

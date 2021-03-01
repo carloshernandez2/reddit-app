@@ -58,6 +58,7 @@ const SessionSlice = createSlice({
       state.status = 'succeeded'
       state.body = action.payload
       state.error = null;
+      state.welcome.string = 'signUp';
     },
     [fetchSession.rejected]: (state, action) => {
       state.status = 'failed'
